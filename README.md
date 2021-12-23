@@ -8,4 +8,9 @@ by the <b>NVIDIA Deep Learning Institute</b>.
 
 To model the neural network, TensorFlow with Keras and Pandas is used.
 
-The Jupyter notebooks are run using JupyterLab on an Amazon AWS cloud with GPU Acceleration.
+The Jupyter notebooks are run using JupyterLab on an Amazon AWS Cloud machine with specifications:
+* NVIDIA V100 GPU
+* CUDA 10.1 with driver version 418.67
+* Ubuntu 16.04
+* Docker 18.03.1-ce
+* nvidia-docker2
