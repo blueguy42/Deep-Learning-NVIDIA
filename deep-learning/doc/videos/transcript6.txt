@@ -1,0 +1,75 @@
+This is exciting because we've come so far and now we have so many options available to us on where we can go
+So for now we mostly been focusing on computer vision
+But there are many other fields of artificial intelligence such as natural language processing, reinforcement learning, and anomaly
+detection
+Just to name a few. There are so many more out there
+So for this lecture we're going to focus on one of them which is natural language processing
+Let's say we're going to make at all to help with writer's block
+Given the first few words of a sentence, we want our model to fill in the rest of the sentence
+The first thing we need to figure out is how are we going to represent our words as numbers
+When people were first approaching this problem
+one solution they came up with was to make their own dictionary
+We’ll take every unique word and assign it a number
+and we’ll call this list of words our dictionary
+We can then run our sentence through our dictionary to get the number assigned to each word
+A function that does this is called a tokenizer
+We’ll start simple and create a model that takes one word as an input and tries to predict the next word as an output
+Given our dictionary, we might predict the word to come after “dog”
+would be “ate” or “barked”
+How would we set up our model to do this?
+Even though we’ve assigned each word a number, it’s still a categorical variable
+To treat it as such, we’ll assign each word to an input neuron
+From the computer’s perspective, it will assign the input word a 1 and all other inputs a 0
+This is called one-hot encoding because we’re giving one value a one (the hot)
+and everything else is cold (the zeros)
+For the outputs
+it will assign a percentage chance that the output word will follow the input word
+That works well if we have a small dictionary size
+But what if we have millions of words
+That would result in us having millions of weights
+One trick to handle this situation is to make something called an embedding
+Let’s say we have a dictionary of animals and we want to represent them with two numbers
+We might take two ways we can describe these animals
+Like how wild or domestic they are
+and how big or small they are
+We’ll assign an animal that’s totally domestic a -1 on the domestic/wild scale
+and assign an animal that’s totally wild a +1 on the domestic/wild scale
+This is called an embedding because we’re taking something that’s higher dimensional
+all of our animals as categories
+and mapping them in a smaller dimensional space
+We’re using two descriptors here, so it’s a 2-dimensional embedding
+If we used three descriptors like domestic/wild, big/small
+and prey/predator, that would be a 3-dimensional embedding
+A long time ago, a group of linguists tried to do this exercise where they assigned values to word descriptors
+Today we can use neural networks
+Whenever we go from higher dimensional space down to lower dimensional space in our neural network
+that’s technically an embedding
+In other words, whenever we go from more neurons to less neurons, we’re creating an embedding
+The number of neurons in the lower dimension is the embedding size
+These days, people often use transfer learning for word embeddings
+This follows the result of recent research
+In the lab today
+we’ll be creating our own to see how it’s done
+Cool, so we now know how to map our words to numbers
+However if we're going to predict the next word of a sentence
+we’ll need a way to capture the previous words used in a sentence
+Here, we’re trying to predict the third word of these sentences, but the first word of these sentences has a significant impact on
+those predictions
+In order to keep this first word in memory, we’re going to create something called a Recurrent Neural Network, or RNN
+It will make more sense when we see it in action, so let’s step through it with our cats example
+Let's start off with our cat prediction
+We’ll feed a 1 into the neuron that corresponds with cat
+and like before, we’ll get a prediction on what the next word will be
+When we do this, the neurons in our RNN layer are going to have a numerical output just like a normal neuron does
+We’re going to use this same concept again and when we feed in the next word for our sentence, our network learns that "cats"
+at the beginning of the sentence has a specific meaning as opposed to during a different part of the sentence
+We’ll reuse our network again for the next word, “say”
+When we combine this with the encoding we have from “cats”
+We’ll get a new encoding in our RNN, and a new prediction for the next word in our sentence
+In the lab, we’ll be using an evolution of the RNN called the Long-Short Term Memory unit or LSTM
+The difference is that the LSTM has its own set neurons that act as its own memory
+The goal is to capture attention
+If the LSTM is fed long paragraphs of text, it does a better job of remembering the key elements of that text
+If you’re curious to learn more about the math
+Check out the link in the notes below
+Okay time for some fun good luck in the lab

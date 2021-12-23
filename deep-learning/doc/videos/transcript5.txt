@@ -1,0 +1,79 @@
+Let's review some of the components a neural network. There is learning rate which is the amount we change our weights during gradient
+descent
+There's a number of layers that we have in our network
+The number of neurons
+The activation functions we decide to use
+Not to mention, in order to train a model, we need a bunch of data
+Sure seems like a lot of work
+Wouldn't it be great if we didn't have to do all of it?
+The great news is that more and more teams and researchers are making their models readily available
+Not only are there websites like Nvidia GPU cloud
+where you can download ready to go models
+but TensorFlow and PyTorch have modules within their framework to load a model into python given the model’s URL
+Keras itself comes with models prepackaged
+Even better news?
+All of these balls are free
+The model we’ll be experimenting with today
+is called VGG16 which was proposed in an appropriately titled paper
+Very deep convolutional neural networks for large-scale image recognition
+It was the winning architecture for the 2014 imagenet challenge
+ImageNet is a database of millions of photos that have been labeled for thousands of categories
+Including animals food trees sports and people
+Recently these object detection rules perform better than humans having over a 95% accuracy
+What better use for this model then to make an automated doggy door
+We no longer need to get up in the middle of the night to let our pets out
+Since ImageNet has many pictures of animals, we’re going to use it to recognize our canine friends and to keep all other critters out.
+After you complete the doggy door, we're going to take on another challenge using an approach called transfer learning.
+Good news everyone
+The United States Secret Service has learned of our great machine learning skills
+and has contracted us to make a Doggy Door for the White House
+To help us, they’ve given us a few pictures of Bo, the Portuguese Water Dog that served as “First Dog” from
+2009 to 2017
+We need to make sure this door only recognizes Bo, and not any other dogs trying to sneak into the White House.
+The trouble is, we can’t use our pretrained model because it can only recognize dogs in general
+The trouble is, we can’t use our pretrained model because it can only recognize dogs in general
+But if a model can already tell what a dog is
+wouldn’t it be great to use that as a starting point
+It turns out we can
+We just have to do a little bit of brain surgery to make it happen
+Thankfully, the surgery we’re doing on our machine learning models is a lot easier than actual brain surgery
+We’ll take a pretrained model and essentially cut the end off of it
+We’ll use the top layers of the old model, and then build out our own new layers on the bottom
+Technically, we can slice and dice these layers any way that we want
+, but there is a practical reason for using the top of the old model instead of the bottom
+As we move from the beginning of our model to the end
+From left to right in this case
+Our models go from are generalized to more specific
+The top of the convolutional model picks up edges
+and each layer builds on the last to build more complicated shapes
+More layers in the models the more specialized those shapes are going to be based on the data it’s trained on
+These earlier patterns are easier to generalize
+when it comes to transfer learning, it tends to be more useful to copy the building blocks found in the earlier layers
+Another thing we should consider is whether or not we want to freeze the weights from the old model we’re building off of
+Freezing is another way to say we’re going to prevent the weights from updating during training, or to make them untrainable
+Making the weights of the old model trainable can help specialize the new model for the new dataset coming in
+But be warned
+If the old model is large like the VGG16
+the high number of weights will easily result in overfitting if our new dataset is too small
+This would also be a good time to talk about data bias
+Data bias is when a subset of our data is overrepresented
+For instance, if we’re making a model to determine the manufacturer of a car
+and we mostly have trucks in our dataset
+our model will have a hard time identifying vans, sports cars, and sedans
+This has come up frequently with discussions on the ethical use of artificial intelligence
+If models are only trained on one ethnic group than it can result in some embarrassing predictions in the underrepresented
+groups
+This is something to think about when using transfer learning
+as our new model can pick up biases of the old one
+To end on a fun note
+Transfer learning is a great opportunity to do something called Dreaming
+This is done by feeding an image through layers in a neural network
+but instead of doing gradient descent
+we’re going to maximize our loss through gradient ascent
+The goal is to exaggerate the patterns that the model sees in our image
+Here, Bo has been fed through the first three convolutional layers from the InceptionV3 model
+And what we're seeing here are the gradients
+As it progresses the layers slowly start picking up more detail
+Unfortunately the full breakdown of the mechanisms would take more time than we have
+but we’ve linked the tutorial on how to do it if you’re up for the challenge
+First things first let's make our doggy door in our presidential doggy door

@@ -1,0 +1,71 @@
+Congratulations you made it through all the labs
+It's kind of more fun it's a sampling of all the different ways that we can apply deep learning
+So the first one is autoencoders
+Which sounds simple on the surface, but they can get surprisingly complex
+So here's the idea
+We have a bunch of inputs
+And we want to make a neural network such that it creates the same outputs
+Which seems a little redundant right
+This is what we can do with it
+We can cut the neural network such that
+We now have an encoder and a decoder. Remember the embeddings from before?
+It's like we can use that embedding to save an output and compress our data and then later use it as input
+In order to expand that data
+This is also used for anomaly detection because if we feed our network an input
+And it's not the same as the output
+That might give us a hint that there's an anomaly in out data
+The next one's called generative adversarial networks or GANs for short
+It's called adversarial because we have two networks at play here
+One called the generator and one called the discriminator
+So what the generator is going to do is it's going to take a random input, it's just noise essentially
+And it's going to try and make an output to fool this discriminator
+So we might imagine that we work for an art museum
+And the curator is employ us because they want to help us detect any forgeries
+How are we going to do this
+They're going to give us a bunch of samples of real paintings
+And we're going to use our generator to come up with some fake paintings
+The discriminator is then going to shuffle
+All the real images and all the fake images
+And when it's given an input, it's going to guess whether it's real or not
+This can end up with some interesting results because the generator can get really really good at trying to imitate the real thing
+This one is my personal favorite. it's called reinforcement learning
+And it applies so much to being a teacher
+So let me to take an example of the this dog here. this is my sister's dog Penny
+Penny has a treat on her nose
+It is very very tricky to teach a dog this trick to not eat the food because it wants to eat the food immediately
+But, Penny has learned that if she waits a little bit
+Not only will she get that treat
+She'll also get another treat
+And that's what reinforcement learning is all about
+It's this idea of being able to learn rewards over a different period of time spans. So this one can you use for training robots
+It's kind of interesting to think about
+If the robots does the right thing we can give it a cookie and if it does the bad thing we slap it on the wrist
+And overtime it'll learn the behaviors that we want it to learn
+Alright one last thought before we go. I like to finish all my classes on a philosophical note. Something just fun to think about
+So here's the hypothetical question
+When do we know that machines fully understand the concepts that were trying to teach them
+As opposed to just copying a set of instructions
+Here's a hypothetical situation
+Let's say that we're stuck in a room
+And it's just full books relating to rocket science
+I'm not a rocket scientist, I'm an AI teacher but in this hypothetical room people are slipping equations under the door for me to solve
+Now what I can do is because I have this huge set of books based on rocket science
+Is I can look at the equation
+I find the book that matches it
+I just copy the solution from the book
+Then I slip the equation back under the door with the solution
+Now, the people on the other side of the door
+They're thinking wow
+This person knows all sorts of great rocket science stuff but in reality
+I'm just copying solution
+With these types of Turing like questions I like to flip it around and think
+How is a human not like a computer
+When do I know that I fully understand a concept
+So I'll let you think about it for a bit and see if you can come up with an answer to that
+There is no right or wrong answer
+However, the people that can describe what understanding truly is
+And not only that but can describe it in a way that a computer can understand
+Are the ones that make the biggest breakthroughs in artificial intelligence
+Okay that's all I have for you
+Thank you so much I had so much fun making this class
+Good luck on your journey
